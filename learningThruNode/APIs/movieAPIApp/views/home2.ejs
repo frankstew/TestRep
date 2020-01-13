@@ -1,0 +1,15 @@
+<!-- just list movies here, deal with search separately -->
+<h1>
+	<% if (parsedBody["Search"] === undefined) { %>
+	
+		<%= "Sorry, no results found, try a different search" %>
+	
+	<% } else { %>
+		<% for (var i = 0; i < parsedBody["Search"].length; i++) { %>
+			<li> <%= parsedBody["Search"][i]["Title"] %> </li>
+		<% } %>
+	<% } %>
+<!-- href is a link to the route, not the file -->
+<!-- sends to currenturl/, cant send to goormide....goorm.io/search2 or something, need / at the end or another route, not file-->
+	<a href="/">Make another search</a>
+</h1>

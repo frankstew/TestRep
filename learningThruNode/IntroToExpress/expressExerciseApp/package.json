@@ -1,0 +1,14 @@
+{
+  "name": "expressexerciseapp",
+  "version": "1.0.0",
+  "description": "My first express app by myself, im a big boy",
+  "main": "app.js",
+  "scripts": {
+    "test": "app.js"
+  },
+  "author": "Frank Stewart",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}

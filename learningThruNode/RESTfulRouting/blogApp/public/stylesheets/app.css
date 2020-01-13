@@ -1,0 +1,52 @@
+i.code.icon {
+	font-size: 1.5em;
+}
+
+.backButton {
+	margin-top: 7em;
+}
+.container.main {
+	margin-top: 7em;
+	text-align: center;
+}
+
+/* a.header {
+	float: left;
+	display: inline;
+	
+} */
+.post {
+	margin-bottom: 3em;
+}
+
+.title {
+	margin: 10px auto;
+	font-size: 2em;
+}
+
+.topButtons {
+	margin: 10px auto;
+}
+
+.editButtons {
+	margin-top: 10px;
+	float: left;
+}
+
+.delete {
+	float: right;
+	font-size: 0.3em;
+}
+
+.ui.small.red.button {
+
+	padding: 0.3em 0.05em 0.3em 0.05em;
+}
+
+#topCornerDelete {
+	margin: 0;
+}
+
+.trademark {
+	margin: 50px;
+}

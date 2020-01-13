@@ -1,0 +1,23 @@
+<%- include("partials/header") %> <!-- include header partial -->
+
+<h1>
+	You Got Fucked by: 
+</h1>
+<% if(thingVar.toLowerCase() === "me"){ %>
+	<h1>
+		<%= thingVar.toUpperCase(); %> bitch  
+		<% thingVar = "I"; %>
+	</h1>
+<% } else { %>
+<h1>
+	<%= thingVar.toUpperCase(); %>
+</h1>
+<% } %>
+
+<% for (var i = 0; i < 10; i++) { %>
+	<h1>
+		<%= thingVar; %> fucked you
+	</h1>
+<% } %>
+<%- include("partials/footer") %> <!-- include header partial -->
+

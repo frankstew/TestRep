@@ -1,0 +1,54 @@
+<%- include("partials/header.ejs"); %>
+
+
+<div class="ui main text container">
+		<a class="ui colored blue button" href="/"><i class="undo icon"></i>Go back home</a>
+		<a class="ui colored orange button" href="/posts/new"><i class="pencil alternate icon"></i>Write a new post</a>
+		<div class="ui huge header">
+			All Posts
+		</div>
+		<div class="ui top attached segment">
+			<div class="ui divided items">
+				<% for (var i = 0; i < blogPosts.length; i++) { %>
+					<% var showRoute = "/posts/" + blogPosts[i]._id; %>
+					<div class="item">
+						<div class="image">
+							<img src="<%= blogPosts[i].img; %>">
+						</div>
+						<div class="content">
+							<a class="header" href="<%= showRoute %>"><%= blogPosts[i].title; %></a>
+							<form class="ui form delete" action="/posts/<%= blogPosts[i]._id %>?_method=DELETE" method="POST">
+								<button class="ui small red floated colored button">
+									<i id="topCornerDelete" class="trash alternate outline icon"></i>
+								</button>
+							</form>
+							<div class="meta">
+								<span><%= blogPosts[i].created.toDateString() %></span>
+							</div>
+							<div class="description">
+								<!-- 		<%- %> runs the post as html			 -->
+								<p><%- blogPosts[i].postBody.substring(0,100); %>...</p>
+							</div>
+							<div class="extra">
+								<a class="ui colored floated green button" href="<%= showRoute %>">
+									Read more
+									<i class="right arrow icon"></i>
+								</a>
+								<!-- 	how to do a delete request, _method is used bc thats what we said on app.js	 -->
+								
+							</div>
+						</div>	
+					</div>
+				<% } %>
+			</div>
+		</div>
+</div>
+
+<!-- <div class="topButtons">
+							<a class="ui basic yellow button" href="<%= //showRoute %>">See more</a>
+							<a class="ui basic purple button" href="posts/<%=//blogPosts[i]._id%>/edit">Edit post</a>
+						</div> -->
+
+<%- include("partials/footer.ejs"); %>
+
+	

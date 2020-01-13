@@ -1,0 +1,59 @@
+<html>
+	<head>
+		<style>
+			body {
+				text-align: center;
+			}
+			
+			input {
+				font-size: 40px;
+				height: 10%;
+				width: 70%;
+			}
+			
+			button {
+				height: 10%;
+				font-size: 40px;
+
+				margin-top: 0;
+			}
+			
+			ul {
+				list-style-type: none;
+				font-size: 50px;
+				line-height: 150%;
+			}
+			
+		</style>
+	</head>
+	
+	<body>
+		<!-- 	need a post request to make the req.body.movieSearch work	 -->
+		<form action="/search" method="POST">
+			
+		<!-- 	name = movieSearch for app.js		 -->
+			<input type="text" name=movieSearch placeholder="Search for a Movie">
+			
+		<!-- 	button sends request		 -->
+			<button>
+				Search
+			</button>
+		</form>
+		<ul>
+			
+		<!-- 	if no results and they have done more than 0 searches, show message...	 -->
+		<% if (searchResults.length === 0 && timesSearched > 0) { %>
+			<h1>
+				No results, try something else.
+			</h1>
+			
+		<!-- 	otherwise do the display of searchResults		 -->
+		<% } else { %>
+			<%for (var i = 0; i < searchResults.length; i++) { %>
+				<li> <%= searchResults[i] %>  </li>
+				<li>------------------------------------------------------</li>
+				<% } %>
+		<% } %>
+		</ul>
+	</body>
+</html>

@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs"); %>
+<div class="ui container backButton">
+	<a class="ui colored blue button" href="/posts"><i class="undo icon"></i>Back to all posts</a>
+
+</div>
+<div class="ui container main text">
+	
+	<div class="ui huge header">
+		<%= post.title; %>
+	</div>
+	<div class="ui top attached segment">
+		<div class="item">
+			<p>
+				<%= post.created.toDateString() %>
+			</p>
+			<img class="ui rounded centered image" src="<%= post.img; %>">
+			
+			<div class="content">
+				
+				<p>
+					<%- post.postBody; %>
+				</p>
+
+				<% var id = post._id; %>
+
+				
+			</div>
+		</div>
+		
+	</div>
+	
+	<div class="editButtons">
+		<a class="ui colored green button" href="<%= "/posts/" + id + "/edit" %>"><i class="edit icon"></i>Edit</a>
+		<form class="delete" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+			<button class="ui colored red button">
+				<i class="trash alternate outline icon"></i>Delete
+			</button>
+		</form>
+	</div>
+	
+	
+	
+	
+
+	
+
+</div>
+
+
+<%- include("partials/footer.ejs"); %>

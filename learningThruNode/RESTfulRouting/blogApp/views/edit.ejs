@@ -1,0 +1,50 @@
+<%- include("partials/header.ejs"); %>
+									<!-- put request using method-override -->
+<% var putRoute = "/posts/" + post._id + "?_method=PUT"; %>
+<div class="ui main text container">
+	<div class="ui main text container segment">
+		<div class="ui huge header">
+			Edit Post
+		</div>
+		<!-- 	post[title] and others makes an object that gets sent back in the form to use in request, doing it the other way in new, just sending separate variables	 -->
+		<form class="ui form" action="<%= putRoute %>" method="POST">
+			<div class="field">
+				<label>New Title</label>
+
+				<input type="text" name="post[title]" value="<%= post.title %>" required>
+			</div>
+
+			<div class="field">
+				<label>New Image URL</label>
+				<input type="text" name="post[img]" value="<%= post.img %>" required>
+			</div>
+
+			<div class="field">
+				<label>New body</label>
+				<textarea name="post[postBody]" required><%= post.postBody %></textarea>
+			</div>
+
+			<div class="field">
+				<input class="ui colored teal button" type="submit">
+			</div>
+		</form>
+
+	</div>
+	<div class="editButtons">
+		<form class="delete" action="/posts/<%= post._id %>?_method=DELETE" method="POST">
+			<button class="ui colored red button">
+				<i class="trash alternate outline icon"></i>Delete
+			</button>
+		</form>
+		<a class="ui colored blue button" href="/posts/<%= post._id %>"><i class="undo icon"></i>Go back to blog post</a>
+	</div>
+</div>
+
+
+
+
+
+
+
+
+<%- include("partials/footer.ejs"); %>
